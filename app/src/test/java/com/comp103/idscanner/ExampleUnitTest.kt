@@ -1,5 +1,6 @@
 package com.comp103.idscanner
 
+import com.comp103.idscanner.util.parseInput
 import org.junit.Test
 
 import org.junit.Assert.*
@@ -13,5 +14,17 @@ class ExampleUnitTest {
     @Test
     fun addition_isCorrect() {
         assertEquals(4, 2 + 2)
+    }
+
+    @Test
+    fun testing_StringJoin() {
+        val list = ArrayList<String>()
+        list.add("A")
+        list.add("B")
+        list.add("C")
+        list.add("D")
+        list.add("E")
+
+        assertEquals("A, B, C, D, E", parseInput(list))
     }
 }
