@@ -9,14 +9,46 @@
     <option name="TOOL_WINDOW_LOG_LEVEL" value="error" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="56a1899a-76bc-4cda-b9b5-d6d4bf1d473d" name="Default Changelist" comment="" />
+    <list default="true" id="56a1899a-76bc-4cda-b9b5-d6d4bf1d473d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/comp103/idscanner/util/Utils.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/javaCompile/jarAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/javaCompile/jarAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/javaCompile/taskHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/app/IDScanner.app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/IDScanner.app.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/comp103/idscanner/activities/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/comp103/idscanner/activities/MainActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/main_activity.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/main_activity.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[Pixel_3a_API_30_x86]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[VirtualDevicePath@C:\Users\Nathan\.android\avd\Pixel_2_API_29.avd]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -25,12 +57,7 @@
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
-        <projects_view>
-          <tree_state>
-            <expand />
-            <select />
-          </tree_state>
-        </projects_view>
+        <projects_view />
       </state>
     </system>
   </component>
@@ -38,10 +65,13 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
-        <option value="Kotlin Class" />
         <option value="Kotlin File" />
+        <option value="Kotlin Class" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1v3UAGEMXX0oVvXMPJY7FFRS2Q1" />
   <component name="ProjectViewState">
@@ -51,8 +81,10 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/java/com" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/values-night" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="preferences.updates" />
   </component>
   <component name="RecentsManager">
     <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
@@ -96,6 +128,7 @@
       <option name="ARTIFACT_NAME" value="" />
       <option name="PM_INSTALL_OPTIONS" value="" />
       <option name="ALL_USERS" value="false" />
+      <option name="ALWAYS_INSTALL_WITH_PM" value="false" />
       <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
       <option name="ACTIVITY_EXTRA_FLAGS" value="" />
       <option name="MODE" value="default_activity" />
@@ -104,6 +137,8 @@
       <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
       <option name="FORCE_STOP_RUNNING_APP" value="true" />
       <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
       <option name="DEBUGGER_TYPE" value="Auto" />
       <Auto>
         <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
@@ -149,6 +184,7 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -162,42 +198,36 @@
     </task>
     <servers />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="257" y="381" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1625811669450">
-      <screen x="0" y="25" width="1440" height="875" />
-    </state>
-    <state x="257" y="381" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.25.1440.875@0.25.1440.875" timestamp="1625811669450" />
-    <state x="484" y="237" width="480" height="459" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog" timestamp="1625822059910">
-      <screen x="0" y="25" width="1440" height="875" />
-    </state>
-    <state x="484" y="237" width="480" height="459" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog/0.25.1440.875@0.25.1440.875" timestamp="1625822059910" />
-    <state x="100" y="125" width="1240" height="675" key="AVDManager" timestamp="1625812853405">
-      <screen x="0" y="25" width="1440" height="875" />
-    </state>
-    <state x="100" y="125" width="1240" height="675" key="AVDManager/0.25.1440.875@0.25.1440.875" timestamp="1625812853405" />
-    <state width="1398" height="459" key="GridCell.Tab.0.bottom" timestamp="1625824912250">
-      <screen x="0" y="25" width="1440" height="875" />
-    </state>
-    <state width="1398" height="459" key="GridCell.Tab.0.bottom/0.25.1440.875@0.25.1440.875" timestamp="1625824912250" />
-    <state width="1398" height="459" key="GridCell.Tab.0.center" timestamp="1625824912248">
-      <screen x="0" y="25" width="1440" height="875" />
-    </state>
-    <state width="1398" height="459" key="GridCell.Tab.0.center/0.25.1440.875@0.25.1440.875" timestamp="1625824912248" />
-    <state width="1398" height="459" key="GridCell.Tab.0.left" timestamp="1625824912247">
-      <screen x="0" y="25" width="1440" height="875" />
-    </state>
-    <state width="1398" height="459" key="GridCell.Tab.0.left/0.25.1440.875@0.25.1440.875" timestamp="1625824912247" />
-    <state width="1398" height="459" key="GridCell.Tab.0.right" timestamp="1625824912249">
-      <screen x="0" y="25" width="1440" height="875" />
-    </state>
-    <state width="1398" height="459" key="GridCell.Tab.0.right/0.25.1440.875@0.25.1440.875" timestamp="1625824912249" />
-    <state x="500" y="244" key="chooseDestDirectoryDialog" timestamp="1625811704638">
-      <screen x="0" y="25" width="1440" height="875" />
-    </state>
-    <state x="500" y="244" key="chooseDestDirectoryDialog/0.25.1440.875@0.25.1440.875" timestamp="1625811704638" />
-    <state x="412" y="217" width="615" height="490" key="find.popup" timestamp="1625812429262">
-      <screen x="0" y="25" width="1440" height="875" />
-    </state>
-    <state x="412" y="217" width="615" height="490" key="find.popup/0.25.1440.875@0.25.1440.875" timestamp="1625812429262" />
+    <state x="257" y="381" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" />
+    <state x="257" y="381" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.25.1440.875@0.25.1440.875" />
+    <state x="484" y="237" width="480" height="459" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog" />
+    <state x="484" y="237" width="480" height="459" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog/0.25.1440.875@0.25.1440.875" />
+    <state x="100" y="125" width="1240" height="675" key="AVDManager" />
+    <state x="100" y="125" width="1240" height="675" key="AVDManager/0.25.1440.875@0.25.1440.875" />
+    <state width="1398" height="459" key="GridCell.Tab.0.bottom" />
+    <state width="1398" height="459" key="GridCell.Tab.0.bottom/0.25.1440.875@0.25.1440.875" />
+    <state width="1398" height="459" key="GridCell.Tab.0.center" />
+    <state width="1398" height="459" key="GridCell.Tab.0.center/0.25.1440.875@0.25.1440.875" />
+    <state width="1398" height="459" key="GridCell.Tab.0.left" />
+    <state width="1398" height="459" key="GridCell.Tab.0.left/0.25.1440.875@0.25.1440.875" />
+    <state width="1398" height="459" key="GridCell.Tab.0.right" />
+    <state width="1398" height="459" key="GridCell.Tab.0.right/0.25.1440.875@0.25.1440.875" />
+    <state x="500" y="244" key="chooseDestDirectoryDialog" />
+    <state x="500" y="244" key="chooseDestDirectoryDialog/0.25.1440.875@0.25.1440.875" />
+    <state x="412" y="217" width="615" height="490" key="find.popup" />
+    <state x="412" y="217" width="615" height="490" key="find.popup/0.25.1440.875@0.25.1440.875" />
   </component>
 </project>
