@@ -16,6 +16,7 @@ import com.comp103.idscanner.databinding.MainActivityBinding
 import com.comp103.idscanner.itemAdapter.ItemAdapter
 import com.comp103.idscanner.itemAdapter.emptyItemAdapter
 import com.comp103.idscanner.util.Utils
+import com.comp103.idscanner.util.emailAdapter
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.zxing.integration.android.IntentIntegrator
 
@@ -69,9 +70,8 @@ class MainActivity : AppCompatActivity() {
      * Email the data in the adapter
      */
     private fun emailData() {
-        Utils.emailAdapter(adapter);
+        emailAdapter(adapter.get());
     }
-
 
     // Get the results:
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
