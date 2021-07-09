@@ -82,6 +82,12 @@ class ItemAdapter(items: ArrayList<String>) : RecyclerView.Adapter<ItemAdapter.V
         items.remove(item)
     }
 
+    /**
+     * Return a read-old copy of the mutable list
+     */
+    fun get() : List<String> {
+        return items;
+    }
 
     /**
      * Usually involves inflating a layout from XML and returning the holder
