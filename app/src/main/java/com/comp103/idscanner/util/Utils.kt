@@ -8,8 +8,9 @@ import android.widget.Toast
 import androidx.core.content.ContextCompat.startActivity
 
 
-const val address : String = "theAdmin@nathansoftware.com" // TODO remove test email
-const val subject : String = "Test Email From IDScanner App" // TODO update to include useful information including data
+const val address: String = "theAdmin@nathansoftware.com" // TODO remove test email
+const val subject: String =
+    "Test Email From IDScanner App" // TODO update to include useful information including data
 
 /**
  * Email Intent to send the adapter
@@ -17,7 +18,7 @@ const val subject : String = "Test Email From IDScanner App" // TODO update to i
  * @param context - content to output to
  * @param input - list to output
  */
-fun emailAdapter(context : Context, input : List<String>) {
+fun emailAdapter(context: Context, input: List<String>) {
     val intent = Intent(
         Intent.ACTION_SENDTO,
         Uri.fromParts("mailto", address, null)
@@ -44,6 +45,6 @@ fun emailAdapter(context : Context, input : List<String>) {
  *
  * @param input - list to parse
  */
-fun parseInput(input : List<String>) : String {
+fun parseInput(input: List<String>): String {
     return input.joinToString()
 }

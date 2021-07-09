@@ -69,7 +69,7 @@ class MainActivity : AppCompatActivity() {
      * Email the data in the adapter
      */
     private fun emailData() {
-        emailAdapter(this, adapter.get());
+        emailAdapter(this, adapter.itemList);
     }
 
     // Get the results:

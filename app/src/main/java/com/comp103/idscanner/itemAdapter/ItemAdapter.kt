@@ -20,13 +20,19 @@ fun emptyItemAdapter(): ItemAdapter {
     return ItemAdapter(ArrayList())
 }
 
-
 /**
  * Item Adapter for Items RecyclerView
  */
 class ItemAdapter(items: ArrayList<String>) : RecyclerView.Adapter<ItemAdapter.ViewHolder>() {
     private var items: ArrayList<String>
     private var itemSet: HashSet<String>
+
+    /**
+     * Read only property for itemList
+     */
+    val itemList: List<String>
+        get() = items.toList()
+
 
     /**
      * Provide a direct reference to each of the views within a data item
@@ -80,13 +86,6 @@ class ItemAdapter(items: ArrayList<String>) : RecyclerView.Adapter<ItemAdapter.V
     fun removeItem(item: String, position: Int) {
         itemSet.remove(item)
         items.remove(item)
-    }
-
-    /**
-     * Return a read-old copy of the mutable list
-     */
-    fun get() : List<String> {
-        return items;
     }
 
     /**
