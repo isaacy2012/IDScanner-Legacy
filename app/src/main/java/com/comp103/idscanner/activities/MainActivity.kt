@@ -8,12 +8,14 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.comp103.idscanner.R
 import com.comp103.idscanner.databinding.MainActivityBinding
 import com.comp103.idscanner.itemAdapter.ItemAdapter
 import com.comp103.idscanner.itemAdapter.emptyItemAdapter
+import com.comp103.idscanner.util.Utils
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.zxing.integration.android.IntentIntegrator
 
@@ -41,6 +43,10 @@ class MainActivity : AppCompatActivity() {
         // Set layout manager to position the items
         g.rvItems.layoutManager = LinearLayoutManager(this)
 
+        // TEST method to activate emailing methods
+        findViewById<Button>(R.id.testButton).setOnClickListener {
+            emailData()
+        }
 
         findViewById<FloatingActionButton>(R.id.fab).setOnClickListener {
             initiateScan()
@@ -57,6 +63,13 @@ class MainActivity : AppCompatActivity() {
         integrator.setBeepEnabled(false);
         integrator.captureActivity = (CaptureActivityPortrait::class.java)
         integrator.initiateScan()
+    }
+
+    /**
+     * Email the data in the adapter
+     */
+    private fun emailData() {
+        Utils.emailAdapter(adapter);
     }
 
 
