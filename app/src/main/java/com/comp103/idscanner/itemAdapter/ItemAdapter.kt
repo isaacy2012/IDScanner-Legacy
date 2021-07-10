@@ -8,17 +8,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.comp103.idscanner.databinding.MainRvItemBinding
+import com.comp103.idscanner.util.saveData
 import java.util.*
 import java.util.function.Consumer
 
-/**
- * Empty item adapter.
- *
- * @return the item adapter
- */
-fun emptyItemAdapter(): ItemAdapter {
-    return ItemAdapter(ArrayList())
-}
 
 /**
  * Item Adapter for Items RecyclerView

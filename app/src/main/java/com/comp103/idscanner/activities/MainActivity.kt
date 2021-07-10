@@ -4,18 +4,21 @@
 package com.comp103.idscanner.activities
 
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
-import android.view.Menu
-import android.view.MenuItem
 import android.view.View
 import android.widget.Button
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.comp103.idscanner.R
 import com.comp103.idscanner.databinding.MainActivityBinding
+import com.comp103.idscanner.factories.emptyItemAdapter
+import com.comp103.idscanner.factories.getSP
+import com.comp103.idscanner.factories.itemAdapterFromString
 import com.comp103.idscanner.itemAdapter.ItemAdapter
-import com.comp103.idscanner.itemAdapter.emptyItemAdapter
 import com.comp103.idscanner.util.emailAdapter
+import com.comp103.idscanner.util.saveData
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.zxing.integration.android.IntentIntegrator
 
@@ -27,6 +30,7 @@ class MainActivity : AppCompatActivity() {
 
     lateinit var g: MainActivityBinding
     lateinit var adapter: ItemAdapter
+    lateinit var sharedPreferences: SharedPreferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,8 +39,21 @@ class MainActivity : AppCompatActivity() {
         setContentView(view)
         setSupportActionBar(g.toolbar)
 
-        // Create adapter from empty adapter
-        adapter = emptyItemAdapter()
+        getSP(this).let {
+            if (it != null) {
+                sharedPreferences = it
+            }
+        }
+
+        // Create adapter from sharedPreferences
+        adapter = if (sharedPreferences.getString(getString(R.string.sp_items), null) != null) {
+            itemAdapterFromString(
+                sharedPreferences.getString(getString(R.string.sp_items),
+                null)!!)
+        } else {
+            emptyItemAdapter()
+        }
+
         // Attach the adapter to the recyclerview to populate items
         g.rvItems.adapter = adapter
         adapter.notifyDataSetChanged()
@@ -83,6 +100,7 @@ class MainActivity : AppCompatActivity() {
                 // QR Code successfully scanned
 //                Toast.makeText(this, "Scanned: " + result.contents, Toast.LENGTH_LONG).show()
                 adapter.addItem(result.contents)
+                saveData(adapter.itemList, sharedPreferences, getString(R.string.sp_items))
                 initiateScan()
             }
         } else {

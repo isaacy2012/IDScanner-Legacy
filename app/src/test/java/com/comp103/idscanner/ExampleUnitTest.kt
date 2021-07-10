@@ -1,6 +1,6 @@
 package com.comp103.idscanner
 
-import com.comp103.idscanner.util.parseInput
+import com.comp103.idscanner.util.listToString
 import org.junit.Test
 
 import org.junit.Assert.*
@@ -25,6 +25,6 @@ class ExampleUnitTest {
         list.add("D")
         list.add("E")
 
-        assertEquals("A, B, C, D, E", parseInput(list))
+        assertEquals("A, B, C, D, E", listToString(list))
     }
 }
