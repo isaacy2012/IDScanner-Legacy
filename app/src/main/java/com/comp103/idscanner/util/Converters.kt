@@ -25,7 +25,7 @@ fun listToString(list: List<Id>): String {
  * @param list - list to parse
  */
 fun listToEmailString(list: List<Id>): String {
-    return list.joinToString(",<br>"){
+    return list.joinToString(",\n"){
         it.idString
     }
 }
