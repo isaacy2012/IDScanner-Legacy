@@ -71,11 +71,11 @@ class ItemAdapter(private var context: Context, items: ArrayList<Id>) :
                     notifyItemChanged(items.indexOf(item))
                     (context as MainActivity).saveData()
                 }
-                .setNegativeButton("Delete") { _: DialogInterface?, _: Int ->
-                    (context as MainActivity).removeItem(item)
-                }
-                .setNeutralButton("Cancel") { _: DialogInterface?, _: Int ->
+                .setNegativeButton("Cancel") { _: DialogInterface?, _: Int ->
                     // User cancelled
+                }
+                .setNeutralButton("Delete") { _: DialogInterface?, _: Int ->
+                    (context as MainActivity).removeItem(item)
                 }
 
             val dialog = builder.create()

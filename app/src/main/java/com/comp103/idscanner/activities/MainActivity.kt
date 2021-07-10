@@ -128,6 +128,10 @@ class MainActivity : AppCompatActivity() {
             ) { _: DialogInterface?, _: Int ->
                 addItem(Id(manualG.editText.text.toString()))
             }
+            .setNegativeButton(
+                "Cancel"
+            ) { _: DialogInterface?, _: Int ->
+            }
         val dialog = builder.create()
         dialog.show()
         dialog.window!!.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE)
