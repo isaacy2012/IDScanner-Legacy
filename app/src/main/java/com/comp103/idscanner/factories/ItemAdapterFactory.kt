@@ -1,5 +1,6 @@
 package com.comp103.idscanner.factories
 
+import android.content.Context
 import com.comp103.idscanner.itemAdapter.ItemAdapter
 import com.comp103.idscanner.util.stringToList
 import java.util.ArrayList
@@ -9,12 +10,12 @@ import java.util.ArrayList
  *
  * @return the item adapter
  */
-fun emptyItemAdapter(): ItemAdapter {
-    return ItemAdapter(ArrayList())
+fun emptyItemAdapter(context: Context): ItemAdapter {
+    return ItemAdapter(context, ArrayList())
 }
 
-fun itemAdapterFromString(str: String): ItemAdapter {
+fun itemAdapterFromString(context: Context, str: String): ItemAdapter {
     val list = stringToList(str)
-    return ItemAdapter(list)
+    return ItemAdapter(context, list)
 }
 

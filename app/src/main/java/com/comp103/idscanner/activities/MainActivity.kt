@@ -14,6 +14,7 @@ import android.view.WindowManager
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.comp103.idscanner.Id
 import com.comp103.idscanner.R
 import com.comp103.idscanner.databinding.MainActivityBinding
 import com.comp103.idscanner.databinding.ManualInputBinding
@@ -62,13 +63,14 @@ class MainActivity : AppCompatActivity() {
         // Create adapter from sharedPreferences
         adapter = if (sharedPreferences.getString(getString(R.string.sp_items), null) != null) {
             itemAdapterFromString(
+                this,
                 sharedPreferences.getString(
                     getString(R.string.sp_items),
                     null
                 )!!
             )
         } else {
-            emptyItemAdapter()
+            emptyItemAdapter(this)
         }
 
         // Attach the adapter to the recyclerview to populate items
@@ -124,7 +126,7 @@ class MainActivity : AppCompatActivity() {
             .setPositiveButton(
                 "Ok"
             ) { _: DialogInterface?, _: Int ->
-                addItem(manualG.editText.text.toString())
+                addItem(Id(manualG.editText.text.toString()))
             }
         val dialog = builder.create()
         dialog.show()
@@ -183,8 +185,17 @@ class MainActivity : AppCompatActivity() {
     /**
      * Add an item to the adapter
      */
-    private fun addItem(str: String) {
-        adapter.addItem(str)
+    private fun addItem(item: Id) {
+        adapter.addItem(item)
+        saveData()
+    }
+
+    internal fun removeItem(item: Id) {
+        adapter.removeItem(item)
+        saveData()
+    }
+
+    internal fun saveData() {
         saveData(adapter.itemList, sharedPreferences, getString(R.string.sp_items))
     }
 
@@ -197,7 +208,7 @@ class MainActivity : AppCompatActivity() {
             if (result.contents == null) {
                 // User cancelled
             } else {
-                addItem(result.contents)
+                addItem(Id(result.contents))
                 initiateScan()
             }
         } else {

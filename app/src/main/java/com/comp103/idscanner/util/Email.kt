@@ -6,6 +6,7 @@ import android.content.Intent
 import android.net.Uri
 import android.widget.Toast
 import androidx.core.content.ContextCompat.startActivity
+import com.comp103.idscanner.Id
 
 
 const val address: String = "theAdmin@nathansoftware.com" // TODO remove test email
@@ -17,7 +18,7 @@ const val subject: String = "Test Email From IDScanner App" // TODO update to in
  * @param context - content to output to
  * @param itemList - list to output
  */
-fun sendEmail(context: Context, itemList: List<String>) {
+fun sendEmail(context: Context, itemList: List<Id>) {
     val emailIntent = Intent(Intent.ACTION_SENDTO,
         Uri.parse("mailto:$address").buildUpon()
             .appendQueryParameter("subject", subject)

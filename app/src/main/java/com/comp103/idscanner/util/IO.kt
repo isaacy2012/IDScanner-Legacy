@@ -1,6 +1,7 @@
 package com.comp103.idscanner.util
 
 import android.content.SharedPreferences
+import com.comp103.idscanner.Id
 
 fun write(stringToWrite: String, sharedPreferences: SharedPreferences, spItemsStr: String) {
     val editor = sharedPreferences.edit()
@@ -8,7 +9,7 @@ fun write(stringToWrite: String, sharedPreferences: SharedPreferences, spItemsSt
     editor.apply()
 }
 
-fun saveData(itemList: List<String>, sharedPreferences: SharedPreferences, spItemsStr: String) {
+fun saveData(itemList: List<Id>, sharedPreferences: SharedPreferences, spItemsStr: String) {
     write(listToString(itemList), sharedPreferences, spItemsStr)
 }
 

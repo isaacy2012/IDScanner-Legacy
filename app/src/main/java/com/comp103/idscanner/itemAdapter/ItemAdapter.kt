@@ -3,35 +3,47 @@
  */
 package com.comp103.idscanner.itemAdapter
 
+import android.content.Context
+import android.content.DialogInterface
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.WindowManager
+import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
+import com.comp103.idscanner.Id
+import com.comp103.idscanner.R
+import com.comp103.idscanner.activities.MainActivity
 import com.comp103.idscanner.databinding.MainRvItemBinding
+import com.comp103.idscanner.databinding.ManualInputBinding
+import com.comp103.idscanner.factories.getManualAddTextWatcher
 import com.comp103.idscanner.util.saveData
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import java.util.*
 import java.util.function.Consumer
-
 
 /**
  * Item Adapter for Items RecyclerView
  */
-class ItemAdapter(items: ArrayList<String>) : RecyclerView.Adapter<ItemAdapter.ViewHolder>() {
-    private var items: ArrayList<String>
-    private var itemSet: HashSet<String>
+class ItemAdapter(private var context: Context, items: ArrayList<Id>) :
+    RecyclerView.Adapter<ItemAdapter.ViewHolder>() {
+    private var items: ArrayList<Id>
+    private var itemSet: HashSet<Id>
 
     /**
      * Read only property for itemList
      */
-    val itemList: List<String>
+    val itemList: List<Id>
         get() = items.toList()
 
 
     /**
      * Provide a direct reference to each of the views within a data item
      */
-    inner class ViewHolder(var g: MainRvItemBinding) : RecyclerView.ViewHolder(g.root), View.OnClickListener {
-        lateinit var item: String
+    inner class ViewHolder(var g: MainRvItemBinding) : RecyclerView.ViewHolder(g.root),
+        View.OnClickListener {
+        lateinit var item: Id
 
         init {
             g.root.setOnClickListener(this)
@@ -43,7 +55,40 @@ class ItemAdapter(items: ArrayList<String>) : RecyclerView.Adapter<ItemAdapter.V
          * @param view the itemView
          */
         override fun onClick(view: View) {
-            // TODO use MaterialDialogBuilder for editing/deleting entries
+            val builder = MaterialAlertDialogBuilder(context, R.style.MaterialAlertDialog_Rounded)
+            val manualG: ManualInputBinding =
+                ManualInputBinding.inflate((context as MainActivity).layoutInflater)
+
+            manualG.editText.setText(item.idString)
+            manualG.editText.requestFocus()
+
+            builder.setMessage("Student ID:")
+                .setView(manualG.root)
+                .setPositiveButton(
+                    "Ok"
+                ) { _: DialogInterface?, _: Int ->
+                    item.idString = manualG.editText.text.toString()
+                    notifyItemChanged(items.indexOf(item))
+                    (context as MainActivity).saveData()
+                }
+                .setNegativeButton("Delete") { _: DialogInterface?, _: Int ->
+                    (context as MainActivity).removeItem(item)
+                }
+                .setNeutralButton("Cancel") { _: DialogInterface?, _: Int ->
+                    // User cancelled
+                }
+
+            val dialog = builder.create()
+            dialog.show()
+            dialog.window!!.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE)
+            val okButton = dialog.getButton(AlertDialog.BUTTON_POSITIVE)
+            okButton.isEnabled = true
+            manualG.editText.addTextChangedListener(
+                getManualAddTextWatcher(
+                    manualG.editText,
+                    okButton
+                )
+            )
         }
 
     }
@@ -62,7 +107,7 @@ class ItemAdapter(items: ArrayList<String>) : RecyclerView.Adapter<ItemAdapter.V
      * @param context  the context
      * @param item     the Item to add
      */
-    fun addItem(item: String) {
+    fun addItem(item: Id) {
         if (itemSet.contains(item) == false) {
             itemSet.add(item)
             items.add(0, item)
@@ -76,7 +121,8 @@ class ItemAdapter(items: ArrayList<String>) : RecyclerView.Adapter<ItemAdapter.V
      * @param item     the item to remove
      * @param position the position of the Item in the List
      */
-    fun removeItem(item: String, position: Int) {
+    fun removeItem(item: Id) {
+        notifyItemRemoved(items.indexOf(item))
         itemSet.remove(item)
         items.remove(item)
     }
@@ -96,7 +142,7 @@ class ItemAdapter(items: ArrayList<String>) : RecyclerView.Adapter<ItemAdapter.V
         // Get the data model based on position
         holder.item = items[position]
         val g: MainRvItemBinding = holder.g
-        g.idTV.text = holder.item
+        g.idTV.text = holder.item.idString
     }
 
     /**

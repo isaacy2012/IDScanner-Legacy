@@ -1,5 +1,7 @@
 package com.comp103.idscanner.util
 
+import com.comp103.idscanner.Id
+
 /**
  * Parse a list of strings into a single CSV
  *
@@ -8,8 +10,10 @@ package com.comp103.idscanner.util
  *
  * @param list - list to parse
  */
-fun listToString(list: List<String>): String {
-    return list.joinToString(",\n")
+fun listToString(list: List<Id>): String {
+    return list.joinToString(","){
+        it.idString
+    }
 }
 
 /**
@@ -20,14 +24,16 @@ fun listToString(list: List<String>): String {
  *
  * @param list - list to parse
  */
-fun listToEmailString(list: List<String>): String {
-    return list.joinToString(",<br>")
+fun listToEmailString(list: List<Id>): String {
+    return list.joinToString(",<br>"){
+        it.idString
+    }
 }
 
-fun stringToList(str: String): ArrayList<String> {
+fun stringToList(str: String): ArrayList<Id> {
     return if (str.isEmpty()) {
         ArrayList()
     } else {
-        ArrayList(str.split(","))
+        ArrayList(str.split(",").map{ Id(it)})
     }
 }
