@@ -55,6 +55,7 @@
         <option value="Class" />
         <option value="Kotlin Class" />
         <option value="Kotlin File" />
+        <option value="resourceFile" />
       </list>
     </option>
   </component>
@@ -72,7 +73,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/java/com" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="preferences.updates" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -227,10 +228,14 @@
     <state x="484" y="237" width="480" height="459" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog/0.25.1440.875@0.25.1440.875" timestamp="1625870378052" />
     <state x="100" y="125" width="1240" height="675" key="AVDManager" timestamp="1625870378052" />
     <state x="100" y="125" width="1240" height="675" key="AVDManager/0.25.1440.875@0.25.1440.875" timestamp="1625870378052" />
-    <state x="548" y="285" key="AndroidCreateXmlResourceDialog" timestamp="1625875948435">
+    <state x="308" y="221" key="AndroidCreateResourceFileDialog" timestamp="1625878902611">
       <screen x="0" y="25" width="1440" height="875" />
     </state>
-    <state x="548" y="285" key="AndroidCreateXmlResourceDialog/0.25.1440.875@0.25.1440.875" timestamp="1625875948435" />
+    <state x="308" y="221" key="AndroidCreateResourceFileDialog/0.25.1440.875@0.25.1440.875" timestamp="1625878902611" />
+    <state x="548" y="285" key="AndroidCreateXmlResourceDialog" timestamp="1625878968035">
+      <screen x="0" y="25" width="1440" height="875" />
+    </state>
+    <state x="548" y="285" key="AndroidCreateXmlResourceDialog/0.25.1440.875@0.25.1440.875" timestamp="1625878968035" />
     <state width="1398" height="228" key="GridCell.Tab.0.bottom" timestamp="1625877977557">
       <screen x="0" y="25" width="1440" height="875" />
     </state>
@@ -251,6 +256,10 @@
     </state>
     <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1625870870488" />
     <state width="1398" height="228" key="GridCell.Tab.0.right/0.25.1440.875@0.25.1440.875" timestamp="1625877977557" />
+    <state x="221" y="98" key="SettingsEditor" timestamp="1625880699864">
+      <screen x="0" y="25" width="1440" height="875" />
+    </state>
+    <state x="221" y="98" key="SettingsEditor/0.25.1440.875@0.25.1440.875" timestamp="1625880699864" />
     <state x="500" y="244" key="chooseDestDirectoryDialog" timestamp="1625870378052" />
     <state x="500" y="244" key="chooseDestDirectoryDialog/0.25.1440.875@0.25.1440.875" timestamp="1625870378052" />
     <state x="412" y="217" width="615" height="490" key="find.popup" timestamp="1625877667014">

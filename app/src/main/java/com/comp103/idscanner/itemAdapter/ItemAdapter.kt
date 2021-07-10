@@ -52,7 +52,7 @@ class ItemAdapter(items: ArrayList<String>) : RecyclerView.Adapter<ItemAdapter.V
      * Reset.
      */
     fun reset() {
-        items.forEach(Consumer<String> { notifyItemRemoved(0) })
+        items.forEach { _ -> notifyItemRemoved(0) }
         items = ArrayList()
     }
 

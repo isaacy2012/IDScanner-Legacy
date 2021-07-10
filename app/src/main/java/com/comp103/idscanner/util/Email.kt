@@ -17,7 +17,7 @@ const val subject: String = "Test Email From IDScanner App" // TODO update to in
  * @param context - content to output to
  * @param itemList - list to output
  */
-fun emailAdapter(context: Context, itemList: List<String>) {
+fun sendEmail(context: Context, itemList: List<String>) {
     val emailIntent = Intent(Intent.ACTION_SENDTO,
         Uri.parse("mailto:$address").buildUpon()
             .appendQueryParameter("subject", subject)

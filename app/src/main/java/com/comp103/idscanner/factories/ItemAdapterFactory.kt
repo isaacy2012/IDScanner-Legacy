@@ -1,6 +1,7 @@
 package com.comp103.idscanner.factories
 
 import com.comp103.idscanner.itemAdapter.ItemAdapter
+import com.comp103.idscanner.util.stringToList
 import java.util.ArrayList
 
 /**
@@ -13,7 +14,7 @@ fun emptyItemAdapter(): ItemAdapter {
 }
 
 fun itemAdapterFromString(str: String): ItemAdapter {
-    val list = ArrayList<String>(str.split(","))
+    val list = stringToList(str)
     return ItemAdapter(list)
 }
 

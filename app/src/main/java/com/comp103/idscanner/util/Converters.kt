@@ -23,3 +23,11 @@ fun listToString(list: List<String>): String {
 fun listToEmailString(list: List<String>): String {
     return list.joinToString(",<br>")
 }
+
+fun stringToList(str: String): ArrayList<String> {
+    return if (str.isEmpty()) {
+        ArrayList()
+    } else {
+        ArrayList(str.split(","))
+    }
+}
