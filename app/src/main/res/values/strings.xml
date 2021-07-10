@@ -10,25 +10,20 @@
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="no_email_error_message">No email application found</string>
-    <string name="sp_items">sp_items</string>
     <string name="warning_no_sp">Couldn\'t find SharedPreferences. Do not close the app, or all data will be lost!</string>
     <string name="action_send">Send Email</string>
     <string name="action_clear">Clear Data</string>
     <string name="action_add_manually">Add Manually</string>
-    <string name="title_activity_settings">SettingsActivity</string>
+    <string name="title_activity_settings">Settings</string>
 
     <!-- Preference Titles -->
-    <string name="messages_header">Messages</string>
-    <string name="sync_header">Sync</string>
+    <string name="settings_email_header">Email</string>
+
+    <!-- SharedPreferences keys -->
+    <string name="sp_items">sp_items</string>
+    <string name="sp_default_email_address">sp_default_email_address</string>
 
     <!-- Messages Preferences -->
-    <string name="signature_title">Your signature</string>
-    <string name="reply_title">Default reply action</string>
+    <string name="default_email_address">Default email address</string>
 
-    <!-- Sync Preferences -->
-    <string name="sync_title">Sync email periodically</string>
-    <string name="attachment_title">Download incoming attachments</string>
-    <string name="attachment_summary_on">Automatically download attachments for incoming emails
-    </string>
-    <string name="attachment_summary_off">Only download attachments when manually requested</string>
 </resources>

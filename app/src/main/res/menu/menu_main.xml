@@ -16,8 +16,12 @@
         app:showAsAction="ifRoom" />
     <item
         android:id="@+id/action_clear"
-        android:icon="@drawable/ic_baseline_delete_sweep_24"
         android:title="@string/action_clear"
         android:orderInCategory="100"
-        app:showAsAction="ifRoom" />
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_settings"
+        android:title="@string/action_settings"
+        android:orderInCategory="100"
+        app:showAsAction="never" />
 </menu>

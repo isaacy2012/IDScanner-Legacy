@@ -163,6 +163,11 @@ class MainActivity : AppCompatActivity() {
                 askToClearIds()
                 true
             }
+            R.id.action_settings -> {
+                val intent = Intent(this, SettingsActivity::class.java)
+                startActivity(intent)
+                true
+            }
             else -> super.onOptionsItemSelected(item)
         }
     }
