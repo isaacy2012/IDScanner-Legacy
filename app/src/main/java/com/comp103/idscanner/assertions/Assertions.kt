@@ -1,3 +1,6 @@
+/**
+ * @author Isaac Young
+ */
 package com.comp103.idscanner.assertions
 
 import com.comp103.idscanner.BuildConfig

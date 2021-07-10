@@ -1,3 +1,6 @@
+/**
+ * @author Isaac Young
+ */
 package com.comp103.idscanner.factories
 
 import android.text.Editable

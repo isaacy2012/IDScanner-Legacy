@@ -1,3 +1,6 @@
+/**
+ * @author Nathanael Rais, Isaac Young
+ */
 package com.comp103.idscanner.util
 
 import android.content.ActivityNotFoundException

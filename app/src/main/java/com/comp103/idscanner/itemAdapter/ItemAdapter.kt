@@ -1,5 +1,5 @@
 /**
- * Author: Isaac Young
+ * @author Isaac Young
  */
 package com.comp103.idscanner.itemAdapter
 
