@@ -20,11 +20,10 @@ const val subject: String = "Test Email From IDScanner App" // TODO update to in
  */
 fun sendEmail(context: Context, itemList: List<Id>) {
     val emailIntent = Intent(Intent.ACTION_SENDTO,
-        Uri.parse("mailto:$address").buildUpon()
-            .appendQueryParameter("subject", subject)
-            .appendQueryParameter("body", listToEmailString(itemList))
-            .build()
+        Uri.fromParts("mailto", address, null)
     )
+    emailIntent.putExtra(Intent.EXTRA_SUBJECT, subject);
+    emailIntent.putExtra(Intent.EXTRA_TEXT, listToEmailString(itemList));
 
     try {
         context.startActivity(Intent.createChooser(emailIntent, "Send Email"))
