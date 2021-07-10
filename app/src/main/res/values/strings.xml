@@ -14,4 +14,5 @@
     <string name="warning_no_sp">Couldn\'t find SharedPreferences. Do not close the app, or all data will be lost!</string>
     <string name="action_send">Send Email</string>
     <string name="action_clear">Clear Data</string>
+    <string name="action_add_manually">Add Manually</string>
 </resources>

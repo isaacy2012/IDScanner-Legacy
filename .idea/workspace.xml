@@ -54,8 +54,8 @@
       <list>
         <option value="Class" />
         <option value="Kotlin Class" />
-        <option value="Kotlin File" />
         <option value="resourceFile" />
+        <option value="Kotlin File" />
       </list>
     </option>
   </component>
@@ -72,19 +72,19 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/java/com" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/layout" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/app/src/main/java/com/comp103/idscanner/factories" />
-    </key>
     <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
       <recent name="com.comp103.idscanner.activities" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/app/src/main/res/values-night" />
       <recent name="$PROJECT_DIR$/app/src/main/res/layout" />
+      <recent name="$PROJECT_DIR$/app/src/main/res/values-night" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/src/main/java/com/comp103/idscanner/factories" />
     </key>
   </component>
   <component name="RunManager" selected="Android App.app">
@@ -232,10 +232,10 @@
       <screen x="0" y="25" width="1440" height="875" />
     </state>
     <state x="308" y="221" key="AndroidCreateResourceFileDialog/0.25.1440.875@0.25.1440.875" timestamp="1625878902611" />
-    <state x="548" y="285" key="AndroidCreateXmlResourceDialog" timestamp="1625878968035">
+    <state x="548" y="285" key="AndroidCreateXmlResourceDialog" timestamp="1625882365827">
       <screen x="0" y="25" width="1440" height="875" />
     </state>
-    <state x="548" y="285" key="AndroidCreateXmlResourceDialog/0.25.1440.875@0.25.1440.875" timestamp="1625878968035" />
+    <state x="548" y="285" key="AndroidCreateXmlResourceDialog/0.25.1440.875@0.25.1440.875" timestamp="1625882365827" />
     <state width="1398" height="228" key="GridCell.Tab.0.bottom" timestamp="1625877977557">
       <screen x="0" y="25" width="1440" height="875" />
     </state>

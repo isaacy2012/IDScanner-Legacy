@@ -10,20 +10,30 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
-import android.widget.Button
+import android.view.WindowManager
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.comp103.idscanner.R
 import com.comp103.idscanner.databinding.MainActivityBinding
+import com.comp103.idscanner.databinding.ManualInputBinding
 import com.comp103.idscanner.factories.emptyItemAdapter
+import com.comp103.idscanner.factories.getManualAddTextWatcher
 import com.comp103.idscanner.factories.getSP
 import com.comp103.idscanner.factories.itemAdapterFromString
 import com.comp103.idscanner.itemAdapter.ItemAdapter
 import com.comp103.idscanner.util.clearData
-import com.comp103.idscanner.util.sendEmail
 import com.comp103.idscanner.util.saveData
+import com.comp103.idscanner.util.sendEmail
+import com.google.android.material.datepicker.CalendarConstraints
+import com.google.android.material.datepicker.DateValidatorPointForward
+import com.google.android.material.datepicker.MaterialDatePicker
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.zxing.integration.android.IntentIntegrator
+import java.time.Instant
+import java.time.LocalDate
+import java.time.LocalDateTime
+import java.time.ZoneId
 import java.util.*
 
 
@@ -78,36 +88,74 @@ class MainActivity : AppCompatActivity() {
         return true
     }
 
+    private fun askToClearIds() {
+        // Use the Builder class for convenient dialog construction
+        val builder =
+            MaterialAlertDialogBuilder(this, R.style.MaterialAlertDialog_Rounded)
+
+        builder.setMessage(
+            "Are you sure you wish to clear all IDs?"
+        )
+            .setPositiveButton(
+                "Delete"
+            ) { _: DialogInterface?, _: Int ->
+                adapter.reset()
+                clearData(sharedPreferences, getString(R.string.sp_items))
+            }
+            .setNegativeButton(
+                "Cancel"
+            ) { _: DialogInterface?, _: Int -> }
+        val dialog = builder.create()
+        dialog.show()
+    }
+
+    /**
+     * Manually add an entry
+     */
+    private fun addManually() {
+        // Use the Builder class for convenient dialog construction
+        val builder = MaterialAlertDialogBuilder(this, R.style.MaterialAlertDialog_Rounded)
+        val manualG: ManualInputBinding = ManualInputBinding.inflate(layoutInflater)
+
+        manualG.editText.requestFocus()
+
+        builder.setMessage("Student ID:")
+            .setView(manualG.getRoot())
+            .setPositiveButton(
+                "Ok"
+            ) { _: DialogInterface?, _: Int ->
+                addItem(manualG.editText.text.toString())
+            }
+        val dialog = builder.create()
+        dialog.show()
+        dialog.window!!.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE)
+        val okButton = dialog.getButton(AlertDialog.BUTTON_POSITIVE)
+        okButton.isEnabled = true
+        manualG.editText.addTextChangedListener(
+            getManualAddTextWatcher(
+                manualG.editText,
+                okButton
+            )
+        )
+
+    }
+
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         return when (item.itemId) {
+            R.id.action_add_manually -> {
+                addManually()
+                true
+            }
             R.id.action_send -> {
                 emailData()
-                return true
+                true
             }
             R.id.action_clear -> {
-                // Use the Builder class for convenient dialog construction
-                val builder =
-                    MaterialAlertDialogBuilder(this, R.style.MaterialAlertDialog_Rounded)
-
-                builder.setMessage(
-                    "Are you sure you wish to clear all IDs?"
-                )
-                    .setPositiveButton(
-                        "Delete"
-                    ) { _: DialogInterface?, _: Int ->
-                        adapter.reset()
-                        clearData(sharedPreferences, getString(R.string.sp_items))
-                    }
-                    .setNegativeButton(
-                        "Cancel"
-                    ) { _: DialogInterface?, _: Int -> }
-                val dialog = builder.create()
-//                dialog.window!!.setDimAmount(0.0f)
-                dialog.show()
-                return true
+                askToClearIds()
+                true
             }
             else -> super.onOptionsItemSelected(item)
         }
@@ -133,6 +181,14 @@ class MainActivity : AppCompatActivity() {
     }
 
     /**
+     * Add an item to the adapter
+     */
+    private fun addItem(str: String) {
+        adapter.addItem(str)
+        saveData(adapter.itemList, sharedPreferences, getString(R.string.sp_items))
+    }
+
+    /**
      * Get the results
      */
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -141,8 +197,7 @@ class MainActivity : AppCompatActivity() {
             if (result.contents == null) {
                 // User cancelled
             } else {
-                adapter.addItem(result.contents)
-                saveData(adapter.itemList, sharedPreferences, getString(R.string.sp_items))
+                addItem(result.contents)
                 initiateScan()
             }
         } else {
