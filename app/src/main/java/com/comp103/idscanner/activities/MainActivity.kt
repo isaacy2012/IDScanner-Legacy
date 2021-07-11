@@ -223,9 +223,9 @@ class MainActivity : AppCompatActivity() {
         val builder =
             MaterialAlertDialogBuilder(this, R.style.MaterialAlertDialog_Rounded)
 
-        builder.setTitle("Regex match failure")
+        builder.setTitle(getString(R.string.regex_match_failure_title))
         builder.setMessage(
-            "Failed to match \"$output\" to regex \"${regex.toString()}\".\nThis behaviour can be changed in settings. Do you wish to add it anyway?"
+            "Failed to match \"$output\" to Regex string \"${regex.toString()}\".\n\nThis behaviour can be changed in settings.\n\nDo you wish to add it anyway?"
         )
             .setPositiveButton(
                 "Add"
