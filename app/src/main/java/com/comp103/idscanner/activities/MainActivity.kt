@@ -18,24 +18,13 @@ import com.comp103.idscanner.Id
 import com.comp103.idscanner.R
 import com.comp103.idscanner.databinding.MainActivityBinding
 import com.comp103.idscanner.databinding.ManualInputBinding
-import com.comp103.idscanner.factories.emptyItemAdapter
-import com.comp103.idscanner.factories.getManualAddTextWatcher
-import com.comp103.idscanner.factories.getSP
-import com.comp103.idscanner.factories.itemAdapterFromString
+import com.comp103.idscanner.factories.*
 import com.comp103.idscanner.itemAdapter.ItemAdapter
 import com.comp103.idscanner.util.clearData
 import com.comp103.idscanner.util.saveData
 import com.comp103.idscanner.util.sendEmail
-import com.google.android.material.datepicker.CalendarConstraints
-import com.google.android.material.datepicker.DateValidatorPointForward
-import com.google.android.material.datepicker.MaterialDatePicker
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.zxing.integration.android.IntentIntegrator
-import java.time.Instant
-import java.time.LocalDate
-import java.time.LocalDateTime
-import java.time.ZoneId
-import java.util.*
 
 
 /**
@@ -54,10 +43,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(view)
         setSupportActionBar(g.toolbar)
 
-        getSP(this).let {
-            if (it != null) {
-                sharedPreferences = it
-            }
+        getSharedPreferences(this)?.let {
+            sharedPreferences = it
         }
 
         // Create adapter from sharedPreferences
@@ -188,7 +175,16 @@ class MainActivity : AppCompatActivity() {
      * Email the data in the adapter
      */
     private fun emailData() {
-        sendEmail(this, adapter.itemList);
+        val address: String?
+        val subject: String?
+        if (this::sharedPreferences.isInitialized) {
+            address = sharedPreferences.getString(getString(R.string.sp_email_address), null)
+            subject = sharedPreferences.getString(getString(R.string.sp_email_subject), getString(R.string.default_email_subject))
+        } else {
+            address = null
+            subject = null
+        }
+        sendEmail(this, adapter.itemList, address, subject);
     }
 
     /**

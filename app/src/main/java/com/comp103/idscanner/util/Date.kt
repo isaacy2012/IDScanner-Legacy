@@ -6,7 +6,7 @@ package com.comp103.idscanner.util
 import android.icu.text.SimpleDateFormat
 import java.util.*
 
-fun getCurrentTime() : String {
+fun getCurrentTimeString() : String {
     val c = Date(System.currentTimeMillis())
     println("Current time => $c")
 

@@ -21,9 +21,15 @@
 
     <!-- SharedPreferences keys -->
     <string name="sp_items">sp_items</string>
-    <string name="sp_default_email_address">sp_default_email_address</string>
+    <string name="sp_email_address">sp_email_address</string>
+    <string name="sp_email_subject">sp_email_subject</string>
 
     <!-- Messages Preferences -->
-    <string name="default_email_address">Default email address</string>
+    <string name="email_address_title">Default email address</string>
+    <string name="email_subject_title">Default email subject</string>
+    <string name="email_subject_summary">The default email subject, where $date represents the current date and time</string>
+
+    <!-- Defaults -->
+    <string name="default_email_subject">[COMP103] IDScanner Participation - $date</string>
 
 </resources>
