@@ -16,8 +16,13 @@
     <string name="action_add_manually">Add Manually</string>
     <string name="title_activity_settings">Settings</string>
 
+    <string name="regex_failure_message">ID discarded due to Regex match failure. This behaviour can be changed in settings.</string>
+    <string name="about_info">Made by Isaac Young and Nathanael Rais</string>
+
     <!-- Preference Titles -->
     <string name="settings_email_header">Email</string>
+    <string name="settings_regex_header">Regex</string>
+    <string name="settings_about_header">About</string>
 
     <!-- SharedPreferences keys -->
     <string name="sp_items">sp_items</string>
@@ -35,8 +40,5 @@
 
     <!-- Defaults -->
     <string name="default_email_subject">[COMP103] IDScanner Participation - $date</string>
-    <string name="settings_regex_header">Regex</string>
-    <string name="regex_failure_message">ID discarded due to Regex match failure. This behaviour can be changed in settings.</string>
-    <string name="settings_about_header">About</string>
 
 </resources>

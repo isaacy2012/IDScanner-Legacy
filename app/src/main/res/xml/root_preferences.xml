@@ -33,16 +33,11 @@
 
     <PreferenceCategory app:title="@string/settings_about_header">
 
-        <SwitchPreferenceCompat
-            app:key="@string/sp_regex_enable"
-            app:title="@string/regex_enable_title"
-            />
-
-        <EditTextPreference
-            android:dependency="@string/sp_regex_enable"
-            app:key="@string/sp_regex_string"
-            app:title="@string/regex_string_title"
-            app:useSimpleSummaryProvider="true" />
+        <Preference
+            android:key="pref_static_field_key"
+            android:selectable="false"
+            android:persistent="false"
+            android:summary="@string/about_info"/>
 
     </PreferenceCategory>
 
