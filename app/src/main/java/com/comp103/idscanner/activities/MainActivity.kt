@@ -11,6 +11,7 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.view.WindowManager
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -35,6 +36,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var g: MainActivityBinding
     lateinit var adapter: ItemAdapter
     lateinit var sharedPreferences: SharedPreferences
+    lateinit var regexOptions: Pair<Boolean, Regex?>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -163,6 +165,11 @@ class MainActivity : AppCompatActivity() {
      * Initiate a scan
      */
     private fun initiateScan() {
+        // set up regex
+        val regexEnable = sharedPreferences.getBoolean(getString(R.string.sp_regex_enable), false)
+        val regexString = sharedPreferences.getString(getString(R.string.sp_regex_string), null)
+        regexOptions = Pair(regexEnable, if (regexString != null) Regex(regexString) else null)
+
         val integrator = IntentIntegrator(this)
         integrator.setPrompt("Press back to finish");
         integrator.setOrientationLocked(true);
@@ -179,7 +186,10 @@ class MainActivity : AppCompatActivity() {
         val subject: String?
         if (this::sharedPreferences.isInitialized) {
             address = sharedPreferences.getString(getString(R.string.sp_email_address), null)
-            subject = sharedPreferences.getString(getString(R.string.sp_email_subject), getString(R.string.default_email_subject))
+            subject = sharedPreferences.getString(
+                getString(R.string.sp_email_subject),
+                getString(R.string.default_email_subject)
+            )
         } else {
             address = null
             subject = null
@@ -205,6 +215,34 @@ class MainActivity : AppCompatActivity() {
     }
 
     /**
+     * Show match failure dialog
+     * @param output the string that failed to match
+     * @param regex the regex
+     */
+    private fun showMatchFailureDialog(output: String, regex: Regex?) {
+        val builder =
+            MaterialAlertDialogBuilder(this, R.style.MaterialAlertDialog_Rounded)
+
+        builder.setTitle("Regex match failure")
+        builder.setMessage(
+            "Failed to match \"$output\" to regex \"${regex.toString()}\".\nThis behaviour can be changed in settings. Do you wish to add it anyway?"
+        )
+            .setPositiveButton(
+                "Add"
+            ) { _: DialogInterface?, _: Int ->
+                addItem(Id(output))
+                initiateScan()
+            }
+            .setNegativeButton(
+                "Discard"
+            ) { _: DialogInterface?, _: Int ->
+                initiateScan()
+            }
+        val dialog = builder.create()
+        dialog.show()
+    }
+
+    /**
      * Get the results
      */
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -213,8 +251,18 @@ class MainActivity : AppCompatActivity() {
             if (result.contents == null) {
                 // User cancelled
             } else {
-                addItem(Id(result.contents))
-                initiateScan()
+                val output = result.contents
+                if (this::regexOptions.isInitialized && regexOptions.first) {
+                    if (regexOptions.second?.matches(output) == true) {
+                        addItem(Id(output))
+                        initiateScan()
+                    } else {
+                        showMatchFailureDialog(output, regexOptions.second)
+                    }
+                } else {
+                    addItem(Id(output))
+                    initiateScan()
+                }
             }
         } else {
             super.onActivityResult(requestCode, resultCode, data)

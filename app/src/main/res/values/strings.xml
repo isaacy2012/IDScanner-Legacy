@@ -32,11 +32,11 @@
     <string name="regex_string_title">Matching String</string>
     <string name="regex_enable_title">Enable Matching</string>
 
-    <!-- Summaries -->
-    <string name="regex_summary">Regex matcher</string>
 
     <!-- Defaults -->
     <string name="default_email_subject">[COMP103] IDScanner Participation - $date</string>
     <string name="settings_regex_header">Regex</string>
+    <string name="regex_failure_message">ID discarded due to Regex match failure. This behaviour can be changed in settings.</string>
+    <string name="settings_about_header">About</string>
 
 </resources>

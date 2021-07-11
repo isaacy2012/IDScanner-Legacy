@@ -18,18 +18,31 @@
 
     <PreferenceCategory app:title="@string/settings_regex_header">
 
+        <SwitchPreferenceCompat
+            app:key="@string/sp_regex_enable"
+            app:title="@string/regex_enable_title"
+            />
+
         <EditTextPreference
-            android:summary="@string/regex_summary"
+            android:dependency="@string/sp_regex_enable"
             app:key="@string/sp_regex_string"
             app:title="@string/regex_string_title"
-            app:useSimpleSummaryProvider="false" />
+            app:useSimpleSummaryProvider="true" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="@string/settings_about_header">
 
         <SwitchPreferenceCompat
             app:key="@string/sp_regex_enable"
             app:title="@string/regex_enable_title"
-
             />
 
+        <EditTextPreference
+            android:dependency="@string/sp_regex_enable"
+            app:key="@string/sp_regex_string"
+            app:title="@string/regex_string_title"
+            app:useSimpleSummaryProvider="true" />
 
     </PreferenceCategory>
 
