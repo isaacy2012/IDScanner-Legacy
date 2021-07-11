@@ -23,13 +23,20 @@
     <string name="sp_items">sp_items</string>
     <string name="sp_email_address">sp_email_address</string>
     <string name="sp_email_subject">sp_email_subject</string>
+    <string name="sp_regex_string">sp_regex_string</string>
+    <string name="sp_regex_enable">sp_regex_enable</string>
 
     <!-- Messages Preferences -->
     <string name="email_address_title">Default email address</string>
     <string name="email_subject_title">Default email subject</string>
-    <string name="email_subject_summary">The default email subject, where $date represents the current date and time</string>
+    <string name="regex_string_title">Matching String</string>
+    <string name="regex_enable_title">Enable Matching</string>
+
+    <!-- Summaries -->
+    <string name="regex_summary">Regex matcher</string>
 
     <!-- Defaults -->
     <string name="default_email_subject">[COMP103] IDScanner Participation - $date</string>
+    <string name="settings_regex_header">Regex</string>
 
 </resources>

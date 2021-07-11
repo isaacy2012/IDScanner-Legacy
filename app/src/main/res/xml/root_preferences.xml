@@ -10,10 +10,26 @@
 
         <EditTextPreference
             android:defaultValue="@string/default_email_subject"
-            android:summary="@string/email_subject_summary"
             app:key="@string/sp_email_subject"
             app:title="@string/email_subject_title"
             app:useSimpleSummaryProvider="true" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="@string/settings_regex_header">
+
+        <EditTextPreference
+            android:summary="@string/regex_summary"
+            app:key="@string/sp_regex_string"
+            app:title="@string/regex_string_title"
+            app:useSimpleSummaryProvider="false" />
+
+        <SwitchPreferenceCompat
+            app:key="@string/sp_regex_enable"
+            app:title="@string/regex_enable_title"
+
+            />
+
 
     </PreferenceCategory>
 
