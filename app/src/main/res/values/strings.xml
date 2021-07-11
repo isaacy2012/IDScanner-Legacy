@@ -10,9 +10,26 @@
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="no_email_error_message">No email application found</string>
-    <string name="sp_items">sp_items</string>
     <string name="warning_no_sp">Couldn\'t find SharedPreferences. Do not close the app, or all data will be lost!</string>
     <string name="action_send">Send Email</string>
     <string name="action_clear">Clear Data</string>
     <string name="action_add_manually">Add Manually</string>
+    <string name="title_activity_settings">Settings</string>
+
+    <!-- Preference Titles -->
+    <string name="settings_email_header">Email</string>
+
+    <!-- SharedPreferences keys -->
+    <string name="sp_items">sp_items</string>
+    <string name="sp_email_address">sp_email_address</string>
+    <string name="sp_email_subject">sp_email_subject</string>
+
+    <!-- Messages Preferences -->
+    <string name="email_address_title">Default email address</string>
+    <string name="email_subject_title">Default email subject</string>
+    <string name="email_subject_summary">The default email subject, where $date represents the current date and time</string>
+
+    <!-- Defaults -->
+    <string name="default_email_subject">[COMP103] IDScanner Participation - $date</string>
+
 </resources>
