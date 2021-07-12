@@ -20,6 +20,7 @@
 
         <SwitchPreferenceCompat
             app:key="@string/sp_regex_enable"
+            android:defaultValue="true"
             app:title="@string/regex_enable_title"
             />
 

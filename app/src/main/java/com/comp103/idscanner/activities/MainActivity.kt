@@ -169,8 +169,8 @@ class MainActivity : AppCompatActivity() {
      */
     private fun initiateScan() {
         // set up regex
-        val regexEnable = sharedPreferences.getBoolean(getString(R.string.sp_regex_enable), false)
-        val regexString = sharedPreferences.getString(getString(R.string.sp_regex_string), null)
+        val regexEnable = sharedPreferences.getBoolean(getString(R.string.sp_regex_enable), true)
+        val regexString = sharedPreferences.getString(getString(R.string.sp_regex_string), getString(R.string.default_regex_string))
         regexOptions =
             if (regexEnable && regexString != null) EnabledRegex(regexString) else DisabledRegex()
 
