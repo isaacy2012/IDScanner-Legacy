@@ -7,6 +7,7 @@ import android.content.DialogInterface
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
+import android.text.SpannableStringBuilder
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
@@ -14,6 +15,7 @@ import android.view.WindowManager
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.text.bold
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.comp103.idscanner.Id
 import com.comp103.idscanner.R
@@ -232,10 +234,16 @@ class MainActivity : AppCompatActivity() {
     private fun showMatchFailureDialog(output: String, regex: Regex) {
         val builder =
             MaterialAlertDialogBuilder(this, R.style.MaterialAlertDialog_Rounded)
+        val ssb = SpannableStringBuilder()
+            .append("Failed to match ")
+            .bold { append(output)}
+            .append(" to Regex string ")
+            .bold { append(regex.toString()) }
+            .append(".\n\nThis behaviour can be changed in settings.\n\nDo you wish to add it anyway?")
 
         builder.setTitle(getString(R.string.regex_match_failure_title))
         builder.setMessage(
-            "Failed to match \"$output\" to Regex string \"$regex\".\n\nThis behaviour can be changed in settings.\n\nDo you wish to add it anyway?"
+            ssb
         )
             .setPositiveButton(
                 "Add"
