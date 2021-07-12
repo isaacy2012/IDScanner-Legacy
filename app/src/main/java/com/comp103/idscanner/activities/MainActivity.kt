@@ -21,9 +21,7 @@ import com.comp103.idscanner.databinding.MainActivityBinding
 import com.comp103.idscanner.databinding.ManualInputBinding
 import com.comp103.idscanner.factories.*
 import com.comp103.idscanner.itemAdapter.ItemAdapter
-import com.comp103.idscanner.util.clearData
-import com.comp103.idscanner.util.saveData
-import com.comp103.idscanner.util.sendEmail
+import com.comp103.idscanner.util.*
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.zxing.integration.android.IntentIntegrator
 
@@ -36,7 +34,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var g: MainActivityBinding
     lateinit var adapter: ItemAdapter
     lateinit var sharedPreferences: SharedPreferences
-    lateinit var regexOptions: Pair<Boolean, Regex?>
+    lateinit var regexOptions: OptionalRegex
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -73,12 +71,9 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        menuInflater.inflate(R.menu.menu_main, menu)
-        return true
-    }
-
+    /**
+     * Ask the user if they are sure that all the IDs should be cleared
+     */
     private fun askToClearIds() {
         // Use the Builder class for convenient dialog construction
         val builder =
@@ -135,6 +130,12 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        menuInflater.inflate(R.menu.menu_main, menu)
+        return true
+    }
+
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
@@ -168,7 +169,8 @@ class MainActivity : AppCompatActivity() {
         // set up regex
         val regexEnable = sharedPreferences.getBoolean(getString(R.string.sp_regex_enable), false)
         val regexString = sharedPreferences.getString(getString(R.string.sp_regex_string), null)
-        regexOptions = Pair(regexEnable, if (regexString != null) Regex(regexString) else null)
+        regexOptions =
+            if (regexEnable && regexString != null) EnabledRegex(regexString) else DisabledRegex()
 
         val integrator = IntentIntegrator(this)
         integrator.setPrompt("Press back to finish");
@@ -198,18 +200,26 @@ class MainActivity : AppCompatActivity() {
     }
 
     /**
-     * Add an item to the adapter
+     * Add an item to the adapter and persistent data storage
+     * @param item the Id object to add
      */
     private fun addItem(item: Id) {
         adapter.addItem(item)
         saveData()
     }
 
+    /**
+     * Remove an item from the adapter and persistent data storage
+     * @param item The Id object to remove
+     */
     internal fun removeItem(item: Id) {
         adapter.removeItem(item)
         saveData()
     }
 
+    /**
+     * Save the current adapter information to the persistent data storage
+     */
     internal fun saveData() {
         saveData(adapter.itemList, sharedPreferences, getString(R.string.sp_items))
     }
@@ -219,13 +229,13 @@ class MainActivity : AppCompatActivity() {
      * @param output the string that failed to match
      * @param regex the regex
      */
-    private fun showMatchFailureDialog(output: String, regex: Regex?) {
+    private fun showMatchFailureDialog(output: String, regex: Regex) {
         val builder =
             MaterialAlertDialogBuilder(this, R.style.MaterialAlertDialog_Rounded)
 
         builder.setTitle(getString(R.string.regex_match_failure_title))
         builder.setMessage(
-            "Failed to match \"$output\" to Regex string \"${regex.toString()}\".\n\nThis behaviour can be changed in settings.\n\nDo you wish to add it anyway?"
+            "Failed to match \"$output\" to Regex string \"$regex\".\n\nThis behaviour can be changed in settings.\n\nDo you wish to add it anyway?"
         )
             .setPositiveButton(
                 "Add"
@@ -252,16 +262,11 @@ class MainActivity : AppCompatActivity() {
                 // User cancelled
             } else {
                 val output = result.contents
-                if (this::regexOptions.isInitialized && regexOptions.first) {
-                    if (regexOptions.second?.matches(output) == true) {
-                        addItem(Id(output))
-                        initiateScan()
-                    } else {
-                        showMatchFailureDialog(output, regexOptions.second)
-                    }
-                } else {
+                if (regexOptions.passes(output)) {
                     addItem(Id(output))
                     initiateScan()
+                } else {
+                    showMatchFailureDialog(output, (regexOptions as EnabledRegex).regex)
                 }
             }
         } else {

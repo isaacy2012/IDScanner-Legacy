@@ -54,8 +54,8 @@
       <list>
         <option value="Class" />
         <option value="resourceFile" />
-        <option value="Kotlin File" />
         <option value="Kotlin Class" />
+        <option value="Kotlin File" />
       </list>
     </option>
   </component>
