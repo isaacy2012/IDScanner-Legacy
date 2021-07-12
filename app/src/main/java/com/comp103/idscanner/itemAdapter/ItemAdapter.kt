@@ -18,7 +18,7 @@ import com.comp103.idscanner.activities.MainActivity
 import com.comp103.idscanner.databinding.MainRvItemBinding
 import com.comp103.idscanner.databinding.ManualInputBinding
 import com.comp103.idscanner.factories.getManualAddTextWatcher
-import com.comp103.idscanner.util.saveData
+import com.comp103.idscanner.assertions.assert
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import java.util.*
 import java.util.function.Consumer
@@ -98,13 +98,13 @@ class ItemAdapter(private var context: Context, items: ArrayList<Id>) :
      */
     fun reset() {
         items.forEach { _ -> notifyItemRemoved(0) }
-        items = ArrayList()
+        items.clear()
+        itemSet.clear()
     }
 
     /**
      * Add a item
      *
-     * @param context  the context
      * @param item     the Item to add
      */
     fun addItem(item: Id) {
@@ -119,7 +119,6 @@ class ItemAdapter(private var context: Context, items: ArrayList<Id>) :
      * Remove an item.
      *
      * @param item     the item to remove
-     * @param position the position of the Item in the List
      */
     fun removeItem(item: Id) {
         notifyItemRemoved(items.indexOf(item))
@@ -149,6 +148,7 @@ class ItemAdapter(private var context: Context, items: ArrayList<Id>) :
      * Returns the total item count
      */
     override fun getItemCount(): Int {
+        assert(items.size == itemSet.size, "Item set size mismatch")
         return items.size
     }
 
