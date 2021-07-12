@@ -98,7 +98,8 @@ class ItemAdapter(private var context: Context, items: ArrayList<Id>) :
      */
     fun reset() {
         items.forEach { _ -> notifyItemRemoved(0) }
-        items = ArrayList()
+        items.clear()
+        itemSet.clear()
     }
 
     /**
