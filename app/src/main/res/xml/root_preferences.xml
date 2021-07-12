@@ -25,6 +25,7 @@
 
         <EditTextPreference
             android:dependency="@string/sp_regex_enable"
+            android:defaultValue="@string/default_regex_string"
             app:key="@string/sp_regex_string"
             app:title="@string/regex_string_title"
             app:useSimpleSummaryProvider="true" />

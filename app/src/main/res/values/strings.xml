@@ -40,5 +40,6 @@
 
     <!-- Defaults -->
     <string name="default_email_subject">[COMP103] IDScanner Participation - $date</string>
+    <string name="default_regex_string">[0-9]{9}</string>
 
 </resources>
