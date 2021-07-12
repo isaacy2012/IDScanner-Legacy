@@ -229,6 +229,10 @@
     <state x="100" y="125" width="1240" height="675" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.25.1440.875@0.25.1440.875" timestamp="1625877811476" />
     <state x="257" y="381" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1625870378052" />
     <state x="257" y="381" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.25.1440.875@0.25.1440.875" timestamp="1625870378052" />
+    <state x="458" y="213" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1626050031632">
+      <screen x="0" y="25" width="1440" height="875" />
+    </state>
+    <state x="458" y="213" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.25.1440.875@0.25.1440.875" timestamp="1626050031632" />
     <state x="484" y="237" width="480" height="459" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog" timestamp="1625870378052" />
     <state x="484" y="237" width="480" height="459" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog/0.25.1440.875@0.25.1440.875" timestamp="1625870378052" />
     <state x="100" y="125" width="1240" height="675" key="AVDManager" timestamp="1625891136872">
