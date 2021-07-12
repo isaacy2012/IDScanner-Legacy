@@ -104,7 +104,6 @@ class ItemAdapter(private var context: Context, items: ArrayList<Id>) :
     /**
      * Add a item
      *
-     * @param context  the context
      * @param item     the Item to add
      */
     fun addItem(item: Id) {
@@ -119,7 +118,6 @@ class ItemAdapter(private var context: Context, items: ArrayList<Id>) :
      * Remove an item.
      *
      * @param item     the item to remove
-     * @param position the position of the Item in the List
      */
     fun removeItem(item: Id) {
         notifyItemRemoved(items.indexOf(item))

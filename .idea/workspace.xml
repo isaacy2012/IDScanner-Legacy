@@ -56,6 +56,7 @@
         <option value="resourceFile" />
         <option value="Kotlin Class" />
         <option value="Kotlin File" />
+        <option value="valueResourceFile" />
       </list>
     </option>
   </component>
@@ -75,6 +76,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/java/com" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/layout" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
   </component>
   <component name="RecentsManager">
@@ -235,15 +237,19 @@
     <state x="458" y="213" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.25.1440.875@0.25.1440.875" timestamp="1626050031632" />
     <state x="484" y="237" width="480" height="459" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog" timestamp="1625870378052" />
     <state x="484" y="237" width="480" height="459" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog/0.25.1440.875@0.25.1440.875" timestamp="1625870378052" />
+    <state x="456" y="301" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1626056690099">
+      <screen x="0" y="25" width="1440" height="875" />
+    </state>
+    <state x="456" y="301" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.25.1440.875@0.25.1440.875" timestamp="1626056690099" />
     <state x="100" y="125" width="1240" height="675" key="AVDManager" timestamp="1625891136872">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="100" y="125" width="1240" height="675" key="AVDManager/0.0.1920.1040@0.0.1920.1040" timestamp="1625891136872" />
     <state x="100" y="125" width="1240" height="675" key="AVDManager/0.25.1440.875@0.25.1440.875" timestamp="1625870378052" />
-    <state x="308" y="221" key="AndroidCreateResourceFileDialog" timestamp="1625878902611">
+    <state x="308" y="221" key="AndroidCreateResourceFileDialog" timestamp="1626056849847">
       <screen x="0" y="25" width="1440" height="875" />
     </state>
-    <state x="308" y="221" key="AndroidCreateResourceFileDialog/0.25.1440.875@0.25.1440.875" timestamp="1625878902611" />
+    <state x="308" y="221" key="AndroidCreateResourceFileDialog/0.25.1440.875@0.25.1440.875" timestamp="1626056849847" />
     <state x="548" y="285" key="AndroidCreateXmlResourceDialog" timestamp="1625971089254">
       <screen x="0" y="25" width="1440" height="875" />
     </state>
@@ -275,11 +281,11 @@
     <state x="221" y="98" key="SettingsEditor/0.25.1440.875@0.25.1440.875" timestamp="1625880699864" />
     <state x="500" y="244" key="chooseDestDirectoryDialog" timestamp="1625870378052" />
     <state x="500" y="244" key="chooseDestDirectoryDialog/0.25.1440.875@0.25.1440.875" timestamp="1625870378052" />
-    <state x="412" y="217" width="615" height="548" key="find.popup" timestamp="1625970999999">
+    <state x="412" y="217" width="615" height="548" key="find.popup" timestamp="1626054797431">
       <screen x="0" y="25" width="1440" height="875" />
     </state>
     <state x="549" y="228" width="820" height="583" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1625888958323" />
-    <state x="412" y="217" width="615" height="548" key="find.popup/0.25.1440.875@0.25.1440.875" timestamp="1625970999999" />
+    <state x="412" y="217" width="615" height="548" key="find.popup/0.25.1440.875@0.25.1440.875" timestamp="1626054797430" />
     <state x="544" y="265" key="refactoring.ChangeSignatureDialog" timestamp="1625883589014">
       <screen x="0" y="25" width="1440" height="875" />
     </state>

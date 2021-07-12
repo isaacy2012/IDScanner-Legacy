@@ -108,7 +108,7 @@ class MainActivity : AppCompatActivity() {
         manualG.editText.requestFocus()
 
         builder.setMessage("Student ID:")
-            .setView(manualG.getRoot())
+            .setView(manualG.root)
             .setPositiveButton(
                 "Ok"
             ) { _: DialogInterface?, _: Int ->
