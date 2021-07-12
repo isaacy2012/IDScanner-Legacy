@@ -5,6 +5,7 @@ package com.comp103.idscanner.util
 
 interface OptionalRegex {
     /**
+     * Whether a string passes this OptionalRegex
      * @param str The string to match
      */
     fun passes(str: String): Boolean

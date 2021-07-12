@@ -33,10 +33,10 @@ import com.google.zxing.integration.android.IntentIntegrator
  */
 class MainActivity : AppCompatActivity() {
 
-    lateinit var g: MainActivityBinding
-    lateinit var adapter: ItemAdapter
-    lateinit var sharedPreferences: SharedPreferences
-    lateinit var regexOptions: OptionalRegex
+    private lateinit var g: MainActivityBinding
+    private lateinit var adapter: ItemAdapter
+    private lateinit var sharedPreferences: SharedPreferences
+    private lateinit var regexOptions: OptionalRegex
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -236,7 +236,7 @@ class MainActivity : AppCompatActivity() {
             MaterialAlertDialogBuilder(this, R.style.MaterialAlertDialog_Rounded)
         val ssb = SpannableStringBuilder()
             .append("Failed to match ")
-            .bold { append(output)}
+            .bold { append(output) }
             .append(" to Regex string ")
             .bold { append(regex.toString()) }
             .append(".\n\nThis behaviour can be changed in settings.\n\nDo you wish to add it anyway?")
@@ -281,6 +281,5 @@ class MainActivity : AppCompatActivity() {
             super.onActivityResult(requestCode, resultCode, data)
         }
     }
-
 
 }

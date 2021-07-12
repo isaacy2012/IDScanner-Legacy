@@ -10,7 +10,7 @@ import com.comp103.idscanner.databinding.SettingsActivityBinding
 
 class SettingsActivity : AppCompatActivity() {
 
-    lateinit var g: SettingsActivityBinding
+    private lateinit var g: SettingsActivityBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

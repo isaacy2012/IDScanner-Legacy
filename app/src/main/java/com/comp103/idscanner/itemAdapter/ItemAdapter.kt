@@ -18,7 +18,7 @@ import com.comp103.idscanner.activities.MainActivity
 import com.comp103.idscanner.databinding.MainRvItemBinding
 import com.comp103.idscanner.databinding.ManualInputBinding
 import com.comp103.idscanner.factories.getManualAddTextWatcher
-import com.comp103.idscanner.util.saveData
+import com.comp103.idscanner.assertions.assert
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import java.util.*
 import java.util.function.Consumer
@@ -149,6 +149,7 @@ class ItemAdapter(private var context: Context, items: ArrayList<Id>) :
      * Returns the total item count
      */
     override fun getItemCount(): Int {
+        assert(items.size == itemSet.size, "Item set size mismatch")
         return items.size
     }
 
