@@ -4,7 +4,7 @@ The IDScanner App allows you to easily manage signing in a variety of QR codes s
 
 ## Created by Isaac Young and Nathanael Rais
 
- Designed for **Victoria University of Wellington** this app was built in conjunction with the Faculty of Engineering and Computer Science and has helped lecturers and students across campuses.
+ Designed for **Victoria University of Wellington**, ID Scanner was built in conjunction with the Faculty of Engineering and Computer Science.
 
 <img src="readMeImages/main.png"  width="150" height="290">
 
