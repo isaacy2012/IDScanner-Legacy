@@ -31,5 +31,6 @@
             android:theme="@style/zxing_CaptureTheme"
             android:windowSoftInputMode="stateAlwaysHidden" />
     </application>
+    <uses-sdk tools:overrideLibrary="com.google.zxing.client.android" />
 
 </manifest>
