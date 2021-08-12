@@ -6,7 +6,11 @@ package com.comp103.idscanner.activities
 import android.content.DialogInterface
 import android.content.Intent
 import android.content.SharedPreferences
+import android.media.AudioManager
+import android.media.ToneGenerator
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.text.SpannableStringBuilder
 import android.view.Menu
 import android.view.MenuItem
@@ -269,6 +273,7 @@ class MainActivity : AppCompatActivity() {
             if (result.contents == null) {
                 // User cancelled
             } else {
+                beep()
                 val output = result.contents
                 if (regexOptions.passes(output)) {
                     addItem(Id(output))
@@ -280,6 +285,20 @@ class MainActivity : AppCompatActivity() {
         } else {
             super.onActivityResult(requestCode, resultCode, data)
         }
+    }
+
+    /**
+     * Make a beeping noise, indicating a successful scan
+     */
+    private fun beep() {
+        val length = 125
+        val toneGenerator =
+            ToneGenerator(AudioManager.STREAM_MUSIC, ToneGenerator.MAX_VOLUME)
+        toneGenerator.startTone(ToneGenerator.TONE_CDMA_SOFT_ERROR_LITE, length)
+        val handler = Handler(Looper.getMainLooper())
+        handler.postDelayed({
+            toneGenerator.release()
+        }, (length + 50).toLong())
     }
 
 }
