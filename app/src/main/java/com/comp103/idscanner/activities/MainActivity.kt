@@ -179,6 +179,7 @@ class MainActivity : AppCompatActivity() {
             if (regexEnable && regexString != null) EnabledRegex(regexString) else DisabledRegex()
 
         val integrator = IntentIntegrator(this)
+        integrator.setDesiredBarcodeFormats(IntentIntegrator.QR_CODE)
         integrator.setPrompt("Press back to finish");
         integrator.setOrientationLocked(true);
         integrator.setBeepEnabled(false);
